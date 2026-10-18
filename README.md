@@ -1,5 +1,7 @@
 # HFMreader V1.1.0 — Experimental Public Test 1
 
+**繁體中文使用者：請先看[中文操作卡](操作卡_繁體中文.md)。沒有車或線材，也可以執行 `SIMULATE.cmd` 熟悉介面。**
+
 A free Windows tool for Mercedes-Benz owners exploring their Bosch HFM engine-management system. Read live engine data and fault memory, save diagnostic sessions, and help improve compatibility through voluntary test reports.
 
 ![HFMreader running with simulated data](images/hfmreader-simulation.png)
@@ -7,11 +9,13 @@ A free Windows tool for Mercedes-Benz owners exploring their Bosch HFM engine-ma
 
 ## Download: one complete ZIP
 
-When the author publishes this candidate, download **HFMreader_1.1.0-public.1_WIN64.zip** from [GitHub Releases](https://github.com/pellaeonchi-5566/HFMreader/releases). Do not download the repository's Source code ZIP as the Windows application. Do not download individual cloud-folder files.
+**[Download HFMreader for Windows x64 (complete ZIP)](https://github.com/pellaeonchi-5566/HFMreader/releases/download/v1.1.0-public.1/HFMreader_1.1.0-public.1_WIN64.zip)** · [Release notes and SHA-256](https://github.com/pellaeonchi-5566/HFMreader/releases/tag/v1.1.0-public.1). Do not download the repository's Source code ZIP as the Windows application. Do not download individual cloud-folder files.
 
 Extract the entire ZIP to a writable folder. Keep **HFMreader.exe and _internal together**. Python installation is not required. Start with CHECK_PC.cmd, then SIMULATE.cmd before connecting a car. Read [QUICK_START.md](QUICK_START.md).
 
-This is a locally prepared release candidate; a public download is available only after the author publishes a Release. Internal application version: 1.1.0-public.1. Freeware with privately retained source code, not an open-source release.
+This is an experimental public test release. Internal application version: 1.1.0-public.1. Freeware with privately retained source code, not an open-source release.
+
+**No car or cable yet?** Run `SIMULATE.cmd` to explore the interface with simulated data before buying hardware or connecting a vehicle. Simulation does not test your adapter, wiring or ECU compatibility.
 
 ## What you need
 
@@ -19,6 +23,18 @@ This is a locally prepared release candidate; a public download is available onl
 - A compatible USB **KKL 409.1 K-Line interface**. The field-tested setup uses an FTDI chipset and a Windows COM port. A similar blue case or the same seller label does not guarantee the same electronics. ELM327/Bluetooth adapters are not interchangeable with this interface and are not supported by this build.
 - An **OBD female-to-banana breakout cable**, allowing the KKL's power, ground and K-Line to reach the correct vehicle diagnostic sockets. This passive cable is a separate item from the USB KKL interface.
 - Correct driver, confirmed COM number, and vehicle-specific wiring information.
+
+### What the two cables look like
+
+**1. USB KKL interface — connects your computer to the diagnostic cable.**
+
+![USB KKL 409.1 interface reference photo](images/kkl-interface-reference.jpg)
+
+**2. OBD female-to-banana breakout cable — connects the KKL interface to individual vehicle sockets.**
+
+![OBD female-to-banana breakout cable reference photo](images/banana-breakout-reference.jpg)
+
+Connect them in this order: **PC USB → KKL interface → breakout cable → vehicle diagnostic sockets**. These original product photos were supplied by Pellaeon Chi as identification references; a matching blue case does not prove an FTDI chipset. Check the chipset, driver and each lead's function. The pictured CD/software is not required or included.
 
 ![Identify the KKL interface and breakout cable](images/hardware-identification.svg)
 

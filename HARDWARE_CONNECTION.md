@@ -5,9 +5,21 @@
 1. **USB KKL 409.1 interface:** the active USB-to-K-Line electronics. USB connects to the PC; its OBD-shaped male connector connects to the breakout cable. The field-validated interface uses FTDI. Confirm the actual chipset and Windows driver; appearance is not a compatibility test.
 2. **OBD female-to-banana breakout cable:** passive wires ending in separate plugs. It lets you choose the vehicle's diagnostic line. It does not replace the KKL interface or convert communication protocols.
 
+### What the two cables look like
+
+**1. USB KKL interface — connects your computer to the diagnostic cable.**
+
+![USB KKL 409.1 interface reference photo](images/kkl-interface-reference.jpg)
+
+**2. OBD female-to-banana breakout cable — connects the KKL interface to individual vehicle sockets.**
+
+![OBD female-to-banana breakout cable reference photo](images/banana-breakout-reference.jpg)
+
+Connect them in this order: **PC USB → KKL interface → breakout cable → vehicle diagnostic sockets**. These original product photos were supplied by Pellaeon Chi as identification references; a matching blue case does not prove an FTDI chipset. Check the chipset, driver and each lead's function. The pictured CD/software is not required or included.
+
 ![Connection relationships](images/hardware-wiring.svg)
 
-The illustration is original artwork. It shows logical connections, not socket-hole positions or a particular seller's product. Seller photographs provided during preparation are not redistributed.
+The illustration is original artwork. It shows logical connections, not socket-hole positions or a particular seller's product. The product reference photos above are separate from this wiring diagram; they do not establish electrical pin assignments.
 
 ## Documented W124 HFM setup only
 
