@@ -1,0 +1,156 @@
+{
+  "name": "Submit Vehicle Test Results & Logs",
+  "description": "Share successful or unsuccessful vehicle tests and optional reviewed logs.",
+  "title": "[Vehicle Test] ",
+  "body": [
+    {
+      "type": "markdown",
+      "attributes": {
+        "value": "All results are welcome, including successful sessions. Complete reviewed logs help research; attachments are optional. Logs are submitted voluntarily and are never uploaded automatically. By submitting data, you allow the HFMreader team to analyze it for ECU compatibility, diagnostic protocols and communication problems. Public Issue attachments can be accessed by other people. You may omit attachments; agree on a private transfer method with the maintainer before sending private files. Further public sharing of your original personal logs by the team will remain within your consent; submission is not blanket permission to republish them elsewhere."
+      }
+    },
+    {
+      "type": "input",
+      "id": "model",
+      "attributes": {
+        "label": "Vehicle model",
+        "description": "Enter Unknown if unavailable; omit private VIN."
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "input",
+      "id": "year",
+      "attributes": {
+        "label": "Model year",
+        "description": "Enter Unknown if unavailable; omit private VIN."
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "input",
+      "id": "engine",
+      "attributes": {
+        "label": "Engine",
+        "description": "Enter Unknown if unavailable; omit private VIN."
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "input",
+      "id": "ecu",
+      "attributes": {
+        "label": "ECU part number / identification",
+        "description": "Enter Unknown if unavailable; omit private VIN."
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "input",
+      "id": "interface",
+      "attributes": {
+        "label": "Interface / chipset (driver and COM settings if known)",
+        "description": "Enter Unknown if unavailable; omit private VIN."
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "input",
+      "id": "windows",
+      "attributes": {
+        "label": "Windows version",
+        "description": "Enter Unknown if unavailable; omit private VIN."
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "input",
+      "id": "version",
+      "attributes": {
+        "label": "HFMreader version",
+        "description": "Enter Unknown if unavailable; omit private VIN."
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "dropdown",
+      "id": "result",
+      "attributes": {
+        "label": "Test result",
+        "options": [
+          "Successful",
+          "Partially Successful",
+          "Failed",
+          "Connection Failed"
+        ]
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "dropdown",
+      "id": "mode",
+      "attributes": {
+        "label": "Test environment",
+        "options": [
+          "Real vehicle",
+          "Simulation only"
+        ]
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "observations",
+      "attributes": {
+        "label": "Operations and observations",
+        "description": "Ignition/engine conditions, operations tried and observed results. Note request/connection failures or missing data; no need to repeat the fields above. Describe redactions or additional sharing consent here."
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "upload",
+      "id": "logs",
+      "attributes": {
+        "label": "Reviewed test ZIP (optional)",
+        "description": "Upload HFMreader_RESULTS_*.zip after checking personal information. Complete logs are encouraged. Public attachments are accessible to others; omit files you do not want public."
+      },
+      "validations": {
+        "required": false,
+        "accept": ".zip"
+      }
+    },
+    {
+      "type": "checkboxes",
+      "id": "consent",
+      "attributes": {
+        "label": "Voluntary submission and privacy",
+        "options": [
+          {
+            "label": "I voluntarily submit this report for HFMreader team analysis of ECU compatibility, diagnostic protocols and communication problems. I have reviewed any attachments and understand they will be accessible with this Issue; I may submit without attachments. Further team sharing of original personal logs must stay within my consent.",
+            "required": true
+          }
+        ]
+      }
+    }
+  ]
+}

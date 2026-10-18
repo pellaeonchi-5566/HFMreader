@@ -1,0 +1,137 @@
+{
+  "passed": true,
+  "origin": {
+    "tag": "20261013",
+    "release": "https://github.com/astral-sh/python-build-standalone/releases/tag/20261013",
+    "asset": "cpython-3.12.15+20261013-x86_64-pc-windows-msvc-pgo-full.tar.zst",
+    "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261013/cpython-3.12.15%2B20261013-x86_64-pc-windows-msvc-pgo-full.tar.zst",
+    "sha256": "sha256:7780bf6a29f93e6d0e3b5bdbe8cf799b3e2a0638bdec921be5b0c3ca81e67313",
+    "size": 43731659,
+    "windows_build": "https://github.com/astral-sh/python-build-standalone/blob/20261013/cpython-windows/build.py",
+    "downloads": "https://github.com/astral-sh/python-build-standalone/blob/20261013/pythonbuild/downloads.json"
+  },
+  "pe_files": [
+    {
+      "file": "python312.dll",
+      "source_in_official_archive": "python/install/python312.dll",
+      "sha256": "986719d89bc3c095a9e657bae6ae39a565fd6b7df9b6d82e287f33c0d6c39f91"
+    },
+    {
+      "file": "_decimal.pyd",
+      "source_in_official_archive": "python/install/DLLs/_decimal.pyd",
+      "sha256": "471d7183ec0abbd5b4f96f81c44a0cafa57c51ad0541af7768077d81b2ccdee9"
+    },
+    {
+      "file": "_hashlib.pyd",
+      "source_in_official_archive": "python/install/DLLs/_hashlib.pyd",
+      "sha256": "7512ec54ec74245716da975b522b06d1d6275ad3dd40efb68e1c38bf159e18b5"
+    },
+    {
+      "file": "_lzma.pyd",
+      "source_in_official_archive": "python/install/DLLs/_lzma.pyd",
+      "sha256": "648476161d84fd1db32f76ac0227a0dcbff98b4b4dc626360562b9485e8d64aa"
+    },
+    {
+      "file": "_bz2.pyd",
+      "source_in_official_archive": "python/install/DLLs/_bz2.pyd",
+      "sha256": "e5f7b389d13d34b26ae8ff850dc426d334007a1f71089373d61c91abbd3c2d81"
+    },
+    {
+      "file": "unicodedata.pyd",
+      "source_in_official_archive": "python/install/DLLs/unicodedata.pyd",
+      "sha256": "1a7cfd0e38fd7457bf7ebb3d72ba863b4ff3b739f02442b4fb152dcbf08e052c"
+    },
+    {
+      "file": "select.pyd",
+      "source_in_official_archive": "python/install/DLLs/select.pyd",
+      "sha256": "6ba61292499b9d9b4adb985d2e918df9661653238e3dac8387e2b9fc43ce0c11"
+    },
+    {
+      "file": "_socket.pyd",
+      "source_in_official_archive": "python/install/DLLs/_socket.pyd",
+      "sha256": "4260023cd9ef62387fddd1eea3b508311c7414fc65b51295d5508b26d52149b1"
+    },
+    {
+      "file": "_multiprocessing.pyd",
+      "source_in_official_archive": "python/install/DLLs/_multiprocessing.pyd",
+      "sha256": "2275c715a3b07d326d99d8ecff05fbe05646737e8961a0ba277cc6392d082c35"
+    },
+    {
+      "file": "pyexpat.pyd",
+      "source_in_official_archive": "python/install/DLLs/pyexpat.pyd",
+      "sha256": "0c24dfd2d734dadcd724f53c47d5eb2dbbaabc12e517978bb290c75add364169"
+    },
+    {
+      "file": "_ssl.pyd",
+      "source_in_official_archive": "python/install/DLLs/_ssl.pyd",
+      "sha256": "090521a0229f0aac49bb97c6ee1901c246536b0ca7d2ab669a163ff35df7b53e"
+    },
+    {
+      "file": "_ctypes.pyd",
+      "source_in_official_archive": "python/install/DLLs/_ctypes.pyd",
+      "sha256": "ed6930ac9dedc6f8527ad2fee3d5cd3d58caec52ef7be2405c6923efaa09f306"
+    },
+    {
+      "file": "_queue.pyd",
+      "source_in_official_archive": "python/install/DLLs/_queue.pyd",
+      "sha256": "6d026f5a4c457a1bca38a0f09d6b97b50ac7a6c58ba6eac11d787895b4d7aaf7"
+    },
+    {
+      "file": "_uuid.pyd",
+      "source_in_official_archive": "python/install/DLLs/_uuid.pyd",
+      "sha256": "27b4e8deacb9745c4bee28b969d8b87bc2e7352b37c3b7ce0b7b102741b876fe"
+    },
+    {
+      "file": "_wmi.pyd",
+      "source_in_official_archive": "python/install/DLLs/_wmi.pyd",
+      "sha256": "e057d9d8bdeb0532eff3bcdb25cfa742c26f1366a7663f3203e3e0503e5340b4"
+    },
+    {
+      "file": "_tkinter.pyd",
+      "source_in_official_archive": "python/install/DLLs/_tkinter.pyd",
+      "sha256": "bcc5bd76fddb0c5e5fd31c69c5d19f1b30afe6c0083973fbd083a96c176883a6"
+    },
+    {
+      "file": "VCRUNTIME140.dll",
+      "source_in_official_archive": "python/install/vcruntime140.dll",
+      "sha256": "d5e4d9a3e835fa679450145d6a7d94e36573a509317111904d9b3712c30d9066"
+    },
+    {
+      "file": "libcrypto-3-x64.dll",
+      "source_in_official_archive": "python/install/DLLs/libcrypto-3-x64.dll",
+      "sha256": "09e02e4017da6ec5117a7a94486769270a6405063476b44c45ef2782c37439d5"
+    },
+    {
+      "file": "libssl-3-x64.dll",
+      "source_in_official_archive": "python/install/DLLs/libssl-3-x64.dll",
+      "sha256": "0d553bc608d8d29d92696c011205a50fc700c4fa56e6bb0e7253c0cb4cf4bcd9"
+    },
+    {
+      "file": "libffi-8.dll",
+      "source_in_official_archive": "python/install/DLLs/libffi-8.dll",
+      "sha256": "cc2a98007ca02968009075c9181d8d7aac6d2d652fe34166a5a2242721c5f124"
+    },
+    {
+      "file": "VCRUNTIME140_1.dll",
+      "source_in_official_archive": "python/install/vcruntime140_1.dll",
+      "sha256": "1f2d41c4aa5db0bc33ebf7b66d72943a817d7ce6cbe880502a9403823633093f"
+    },
+    {
+      "file": "tcl86t.dll",
+      "source_in_official_archive": "python/install/DLLs/tcl86t.dll",
+      "sha256": "a308beae8555cff5ac2aff7eaf0aef40b5fe173f047e246dc49da9a4d3ef62f9"
+    },
+    {
+      "file": "tk86t.dll",
+      "source_in_official_archive": "python/install/DLLs/tk86t.dll",
+      "sha256": "20f4876506bce7f89e53570e64fd1dce30a64548326b45f372871c7019560df4"
+    },
+    {
+      "file": "zlib1.dll",
+      "source_in_official_archive": "python/install/DLLs/zlib1.dll",
+      "sha256": "1dd27f0411ebb31bd148a61589cee254410915f1e6c37aa3ffa52fac71a5426c"
+    }
+  ],
+  "system_runtime": "Windows 10/11 UCRT; not redistributed",
+  "application_core_changes": false
+}

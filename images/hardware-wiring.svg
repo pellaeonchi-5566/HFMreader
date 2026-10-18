@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+<rect width="1200" height="720" fill="#f4f7fa"/>
+<g font-family="Arial,sans-serif" fill="#1e2d3b">
+<text x="50" y="54" font-size="29" font-weight="bold">HFMreader: the two cables and the three connections</text>
+<text x="50" y="87" font-size="18">Documented W124 HFM setup • X11/4 16-pole vehicle socket • not a universal Mercedes pinout</text>
+<g fill="white" stroke="#9babb9" stroke-width="2">
+<rect x="50" y="126" width="240" height="130" rx="15"/><rect x="330" y="126" width="240" height="130" rx="15"/>
+<rect x="610" y="126" width="240" height="130" rx="15"/><rect x="890" y="126" width="260" height="130" rx="15"/>
+</g>
+<g font-size="23" font-weight="bold" text-anchor="middle"><text x="170" y="166">Windows PC</text><text x="450" y="166">USB KKL 409.1</text><text x="730" y="166">Breakout cable</text><text x="1020" y="166">Vehicle X11/4</text></g>
+<g font-size="17" text-anchor="middle"><text x="170" y="203">HFMreader + COM port</text><text x="450" y="203">Active K-Line interface</text><text x="730" y="203">OBD female → banana plugs</text><text x="1020" y="203">Use molded socket numbers</text><text x="450" y="231">Field-tested: FTDI chipset</text><text x="730" y="231">Passive wiring adapter</text></g>
+<g font-size="28" text-anchor="middle"><text x="310" y="198">→</text><text x="590" y="198">→</text><text x="870" y="198">→</text></g>
+<text x="80" y="310" font-size="22" font-weight="bold">KKL / OBD-side pin number</text><text x="780" y="310" font-size="22" font-weight="bold">Vehicle-side socket number</text>
+<g font-size="23"><text x="80" y="370">16 · positive supply</text><text x="80" y="440">4 or 5 · ground</text><text x="80" y="510">7 · K-Line signal</text><text x="850" y="370">16 · supply</text><text x="850" y="440">1 · ground</text><text x="850" y="510">8 · HFM diagnostic line</text></g>
+<g stroke-width="7" fill="none"><path d="M365 361H810" stroke="#d14646"/><path d="M365 431H810" stroke="#38414a"/><path d="M365 501H810" stroke="#bc8d00"/></g>
+<g font-size="16" text-anchor="middle"><text x="590" y="346">Often red — verify function</text><text x="590" y="416">Often black — verify function</text><text x="590" y="486">Do not choose an arbitrary yellow lead</text></g>
+<rect x="50" y="554" width="1100" height="124" rx="12" fill="#e4edf4"/>
+<g font-size="18"><text x="72" y="585">This drawing shows connection relationships, NOT the physical positions of holes in the socket.</text>
+<text x="72" y="615">Read each lead's OBD pin label. If uncertain, check continuity with both ends disconnected and unpowered.</text>
+<text x="72" y="645">Confirm the vehicle-specific pinout and supply. Do not apply this diagram to 8-pole or 38-pole sockets.</text></g>
+</g></svg>
