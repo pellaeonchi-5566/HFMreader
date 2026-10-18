@@ -9,7 +9,7 @@ A free Windows tool for Mercedes-Benz owners exploring their Bosch HFM engine-ma
 
 ## Download: one complete ZIP
 
-**[Download HFMreader for Windows x64 (complete ZIP)](https://github.com/pellaeonchi-5566/HFMreader/releases/download/v1.1.0-public.1/HFMreader_1.1.0-public.1_WIN64.zip)** · [Release notes and SHA-256](https://github.com/pellaeonchi-5566/HFMreader/releases/tag/v1.1.0-public.1). Do not download the repository's Source code ZIP as the Windows application. Do not download individual cloud-folder files.
+**[Download HFMreader for Windows x64 (complete ZIP)](https://github.com/pellaeonchi-5566/HFMreader/releases/download/v1.1.0-public.1/HFMreader_1.1.0-public.1_WIN64_rc4.zip)** · [Release notes and SHA-256](https://github.com/pellaeonchi-5566/HFMreader/releases/tag/v1.1.0-public.1). Do not download the repository's Source code ZIP as the Windows application. Do not download individual cloud-folder files.
 
 Extract the entire ZIP to a writable folder. Keep **HFMreader.exe and _internal together**. Python installation is not required. Start with CHECK_PC.cmd, then SIMULATE.cmd before connecting a car. Read [QUICK_START.md](QUICK_START.md).
 
@@ -70,7 +70,7 @@ Logs are submitted voluntarily and are never uploaded automatically. By submitti
 
 ## Free use and acknowledgments
 
-Personal use and ordinary professional diagnostics are free, including repair shops charging normal labor fees. Unauthorized resale or rebranding of HFMreader is not permitted under the proposed terms. Read [FREE_USE_TERMS.md](FREE_USE_TERMS.md) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Optional sponsorship details may be added later.
+Personal use and ordinary professional diagnostics are free, including repair shops charging normal labor fees. Unauthorized resale or rebranding of HFMreader is not permitted under the HFMreader Free-Use Terms. Read [FREE_USE_TERMS.md](FREE_USE_TERMS.md) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Optional sponsorship details may be added later.
 
 This independent project is not affiliated with or endorsed by Mercedes-Benz, Bosch, FTDI or the adapter manufacturer.
 

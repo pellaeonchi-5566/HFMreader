@@ -15,3 +15,7 @@ Use the attached SHA256SUMS.txt to verify the asset. Read FREE_USE_TERMS.md and 
 Author: **Pellaeon Chi**. Copyright (c) 2026 Pellaeon Chi in original HFMreader material.
 
 This documentation-only revision identifies the author and invites worldwide voluntary vehicle results, including Successful, Partially Successful, Failed and Connection Failed sessions. The Issue Form has an optional ZIP upload field. See TEST_REPORTING.md for packaging, privacy and analysis consent. Application binaries, diagnostic resources and safety checks are unchanged.
+
+## Documentation revision rc4 — 2026-10-19
+
+Pellaeon Chi approved Free-Use Terms version 1.0, effective 2026-10-19. Draft and proposed-terms wording has been removed. The README and hardware guide now include the public download link, Traditional Chinese navigation, simulation guidance and supplied cable reference photos. Only documentation, images and package manifests changed; application binaries and diagnostic resources are byte-identical to rc3. The Windows ZIP SHA-256 has changed; use the accompanying SHA256SUMS.txt.

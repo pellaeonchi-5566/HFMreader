@@ -1,4 +1,6 @@
-# HFMreader free-use terms — draft for author approval
+# HFMreader Free-Use Terms
+
+Version 1.0 — Effective 2026-10-19
 
 Copyright (c) 2026 Pellaeon Chi. All rights reserved in original HFMreader code, artwork and documentation, except material governed by separate third-party terms.
 
@@ -13,5 +15,3 @@ This experimental software is provided "as is", without warranties to the extent
 Microsoft Distributable Code included with the Python Windows runtime must retain its notices, must not be presented as endorsed by Microsoft, must run only on Microsoft operating systems/runtime/application platforms, and must not be included in malicious, deceptive or unlawful programs. See licenses-runtime/Python-Windows-LICENSE.txt for the original Windows binary conditions. Other bundled components retain their own licenses and warranty disclaimers.
 
 Logs are submitted voluntarily and are never uploaded automatically. By submitting data, you allow the HFMreader team to analyze it for ECU compatibility, diagnostic protocols and communication problems. Public Issue attachments can be accessed by other people. You may omit attachments; agree on a private transfer method with the maintainer before sending private files. Further public sharing of your original personal logs by the team will remain within your consent; submission is not blanket permission to republish them elsewhere. Donation, if later offered, is optional and does not purchase a product, support contract, warranty or preferential diagnostic outcome.
-
-This draft requires the author's approval before public release.
