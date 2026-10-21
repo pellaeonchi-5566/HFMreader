@@ -1,21 +1,29 @@
-# HFMreader V1.1.0 — Experimental Public Test 1
+# HFMreader 1.1.1-public.1 — connection recovery maintenance
 
-Free Windows x64 public test candidate, internal version 1.1.0-public.1. This release is based on the existing beta.6 GUI feature set and retains DTC clearing, adaptation reset and their safeguards. It adds no standalone Control Console or new actuator tests.
+This experimental update improves host-side cleanup after a failed read.
+It does not establish the cause of intermittent field failures and does not
+guarantee that USB unplug/replug will no longer be necessary.
 
-Download the complete **HFMreader_1.1.0-public.1_WIN64.zip** asset and extract all files. Keep _internal beside the EXE. Windows 10/11 x64; no Python installation required. Start with CHECK_PC.cmd and SIMULATE.cmd. Read README.md and HARDWARE_CONNECTION.md before connecting a vehicle.
+- A responsive COM worker gets a bounded normal-close attempt after failure.
+- A stalled worker remains subject to forced termination.
+- Original communication errors and cleanup errors are preserved separately.
+- Logs include child PID/exit status, cleanup duration and partial RX.
+- Windows CloseHandle failure is reported instead of silently ignored.
+- No automatic command replay/reconnect; reconnect explicitly.
 
-Includes an independent DTC description catalog (31 unverified descriptions remain labeled), runtime-only HHT resources, an original icon, hardware guidance, local log packaging and English documentation. No private development history or personal logs are included. No automatic uploads.
+Existing pages, keyboard controls, formulas, read recipes, timing, DTC clearing,
+adaptation reset and their safeguards remain unchanged. No new actuator feature.
+Offline regression and clean-package checks are not a new vehicle validation.
 
-Most field evidence concerns BOSCH 0135451332 / 41/00; compatibility with all HFM systems is not claimed. Existing intermittent communication failures and incomplete signal interpretation remain documented limitations. The EXE is unsigned. Offline regression and clean-ZIP verification do not constitute a new vehicle test.
+Extract this ZIP into a new folder. Keep older logs/packages for comparison.
+Run CHECK_PC.cmd, then SIMULATE.cmd before connecting your stationary vehicle.
+On failure, try normal disconnect/reconnect; if it fails, close and reopen the
+application without unplugging USB, then try USB reconnect only if needed.
+Record which step restored operation. Do not operate the computer while driving.
+Before leaving, use PACKAGE_RESULTS.cmd and verify the resulting ZIP exists.
+Review logs for personal data before voluntarily sharing them.
 
-Use the attached SHA256SUMS.txt to verify the asset. Read FREE_USE_TERMS.md and THIRD_PARTY_NOTICES.md. Public test logs are submitted voluntarily after review via Issues; private transfer is by prior agreement.
-
-## Documentation revision rc3
-
-Author: **Pellaeon Chi**. Copyright (c) 2026 Pellaeon Chi in original HFMreader material.
-
-This documentation-only revision identifies the author and invites worldwide voluntary vehicle results, including Successful, Partially Successful, Failed and Connection Failed sessions. The Issue Form has an optional ZIP upload field. See TEST_REPORTING.md for packaging, privacy and analysis consent. Application binaries, diagnostic resources and safety checks are unchanged.
-
-## Documentation revision rc4 — 2026-10-19
-
-Pellaeon Chi approved Free-Use Terms version 1.0, effective 2026-10-19. Draft and proposed-terms wording has been removed. The README and hardware guide now include the public download link, Traditional Chinese navigation, simulation guidance and supplied cable reference photos. Only documentation, images and package manifests changed; application binaries and diagnostic resources are byte-identical to rc3. The Windows ZIP SHA-256 has changed; use the accompanying SHA256SUMS.txt.
+繁體中文：本版改善讀取失敗後的 COM 清理與紀錄，尚未實車證明能消除斷線。
+請解壓至新資料夾，先執行 CHECK_PC.cmd 與 SIMULATE.cmd。停車時測試重新連線、
+關閉重開程式，再視需要拔插 USB，記下哪一步恢復。離開前執行 PACKAGE_RESULTS.cmd，
+確認產生 HFMreader_RESULTS_*.zip。保留舊版與原始紀錄。

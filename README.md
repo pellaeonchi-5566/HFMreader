@@ -1,4 +1,4 @@
-# HFMreader V1.1.0 — Experimental Public Test 1
+# HFMreader V1.1.1 — Experimental Public Test 2
 
 **繁體中文使用者：請先看[中文操作卡](操作卡_繁體中文.md)。沒有車或線材，也可以執行 `SIMULATE.cmd` 熟悉介面。**
 
@@ -7,13 +7,17 @@ A free Windows tool for Mercedes-Benz owners exploring their Bosch HFM engine-ma
 ![HFMreader running with simulated data](images/hfmreader-simulation.png)
 *Actual application screenshot in simulation mode. These are demonstration values, not measurements from a vehicle.*
 
+## Connection recovery update
+
+This release improves bounded COM cleanup and error evidence. **Vehicle recovery improvement is not yet verified.** See [release notes](RELEASE_NOTES.md).
+
 ## Download: one complete ZIP
 
-**[Download HFMreader for Windows x64 (complete ZIP)](https://github.com/pellaeonchi-5566/HFMreader/releases/download/v1.1.0-public.1/HFMreader_1.1.0-public.1_WIN64_rc4.zip)** · [Release notes and SHA-256](https://github.com/pellaeonchi-5566/HFMreader/releases/tag/v1.1.0-public.1). Do not download the repository's Source code ZIP as the Windows application. Do not download individual cloud-folder files.
+**[Download HFMreader for Windows x64 (complete ZIP)](https://github.com/pellaeonchi-5566/HFMreader/releases/download/v1.1.1-public.1/HFMreader_1.1.1-public.1_WIN64.zip)** · [Release notes and SHA-256](https://github.com/pellaeonchi-5566/HFMreader/releases/tag/v1.1.1-public.1). Do not download the repository's Source code ZIP as the Windows application. Do not download individual cloud-folder files.
 
 Extract the entire ZIP to a writable folder. Keep **HFMreader.exe and _internal together**. Python installation is not required. Start with CHECK_PC.cmd, then SIMULATE.cmd before connecting a car. Read [QUICK_START.md](QUICK_START.md).
 
-This is an experimental public test release. Internal application version: 1.1.0-public.1. Freeware with privately retained source code, not an open-source release.
+This is an experimental public test release. Internal application version: 1.1.1-public.1. Freeware with privately retained source code, not an open-source release.
 
 **No car or cable yet?** Run `SIMULATE.cmd` to explore the interface with simulated data before buying hardware or connecting a vehicle. Simulation does not test your adapter, wiring or ECU compatibility.
 
