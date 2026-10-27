@@ -1,4 +1,4 @@
-# HFMreader V1.1.1 — Experimental Public Test 2
+# HFMreader — Experimental Windows diagnostic tool
 
 **繁體中文使用者：請先看[中文操作卡](操作卡_繁體中文.md)。沒有車或線材，也可以執行 `SIMULATE.cmd` 熟悉介面。**
 
@@ -7,17 +7,21 @@ A free Windows tool for Mercedes-Benz owners exploring their Bosch HFM engine-ma
 ![HFMreader running with simulated data](images/hfmreader-simulation.png)
 *Actual application screenshot in simulation mode. These are demonstration values, not measurements from a vehicle.*
 
-## Connection recovery update
+## 2026-10-27: experimental cross-ECU field trial
 
-This release improves bounded COM cleanup and error evidence. **Vehicle recovery improvement is not yet verified.** See [release notes](RELEASE_NOTES.md).
+**1.1.2-field.2 is available for voluntary research, not as a proven cross-ECU fix.** It separates read-only trial consent from control authorization and adds a conditional initialization fallback. BOSCH 45/00 readings/configuration remain unverified and can be wrong; VDO 42/00 initialization remains unresolved. Do not use these readings for diagnosis or repair decisions. See [development log](DEVELOPMENT_LOG.md) and [release notes](RELEASE_NOTES.md).
+
+**繁體中文：新版解除其他 ECU 的唯讀限制並加入備援握手，但跨車讀值尚未適配；45/00 曾顯示錯誤數值，42/00 仍未連線成功。請僅作實驗與紀錄蒐集，詳見更新日誌。**
 
 ## Download: one complete ZIP
 
-**[Download HFMreader for Windows x64 (complete ZIP)](https://github.com/pellaeonchi-5566/HFMreader/releases/download/v1.1.1-public.1/HFMreader_1.1.1-public.1_WIN64.zip)** · [Release notes and SHA-256](https://github.com/pellaeonchi-5566/HFMreader/releases/tag/v1.1.1-public.1). Do not download the repository's Source code ZIP as the Windows application. Do not download individual cloud-folder files.
+**[Download experimental field.2 for Windows x64 (complete ZIP)](https://github.com/pellaeonchi-5566/HFMreader/releases/download/v1.1.2-field.2/HFMreader_1.1.2-field.2_WIN64.zip)** · [Release notes and SHA-256](https://github.com/pellaeonchi-5566/HFMreader/releases/tag/v1.1.2-field.2). Do not download the repository's Source code ZIP as the Windows application. Do not download individual cloud-folder files.
+
+[Previous 1.1.1 public test release](https://github.com/pellaeonchi-5566/HFMreader/releases/tag/v1.1.1-public.1) remains available; it retains the known owner-specific read-only gate.
 
 Extract the entire ZIP to a writable folder. Keep **HFMreader.exe and _internal together**. Python installation is not required. Start with CHECK_PC.cmd, then SIMULATE.cmd before connecting a car. Read [QUICK_START.md](QUICK_START.md).
 
-This is an experimental public test release. Internal application version: 1.1.1-public.1. Freeware with privately retained source code, not an open-source release.
+This is an experimental public test release. Package version: 1.1.2-field.2. Some bundled headings/display metadata still show 1.1.1; the original field ZIP is preserved unchanged. Freeware with privately retained source code, not an open-source release.
 
 **No car or cable yet?** Run `SIMULATE.cmd` to explore the interface with simulated data before buying hardware or connecting a vehicle. Simulation does not test your adapter, wiring or ECU compatibility.
 
