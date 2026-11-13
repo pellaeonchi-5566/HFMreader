@@ -132,7 +132,7 @@
       "id": "logs",
       "attributes": {
         "label": "Reviewed test ZIP (optional)",
-        "description": "Upload HFMreader_RESULTS_*.zip after checking personal information. Complete logs are encouraged. Public attachments are accessible to others; omit files you do not want public."
+        "description": "Lite: use F7 and attach the reviewed HFMreader_V2_*.zip from logs/lite. Older full builds: HFMreader_RESULTS_*.zip. Attachments are optional and publicly accessible; omit private files."
       },
       "validations": {
         "required": false,
@@ -154,3 +154,4 @@
     }
   ]
 }
+

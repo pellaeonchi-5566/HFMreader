@@ -132,6 +132,5 @@
       "sha256": "1dd27f0411ebb31bd148a61589cee254410915f1e6c37aa3ffa52fac71a5426c"
     }
   ],
-  "system_runtime": "Windows 10/11 UCRT; not redistributed",
-  "application_core_changes": false
+  "system_runtime": "Windows 10/11 UCRT; not redistributed"
 }

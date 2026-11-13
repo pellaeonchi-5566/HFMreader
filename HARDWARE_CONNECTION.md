@@ -2,7 +2,7 @@
 
 ## Two separate cables
 
-1. **USB KKL 409.1 interface:** the active USB-to-K-Line electronics. USB connects to the PC; its OBD-shaped male connector connects to the breakout cable. The field-validated interface uses FTDI. Confirm the actual chipset and Windows driver; appearance is not a compatibility test.
+1. **USB KKL 409.1 interface:** the active USB-to-K-Line electronics. USB connects to the PC; its OBD-shaped male connector connects to the breakout cable. The owner's purchase record lists the working adapter as CH340T-based; internal revisions and drivers may differ. Neither CH340 nor FTDI compatibility is guaranteed across all adapters. Confirm the actual chipset and Windows driver; appearance is not a compatibility test.
 2. **OBD female-to-banana breakout cable:** passive wires ending in separate plugs. It lets you choose the vehicle's diagnostic line. It does not replace the KKL interface or convert communication protocols.
 
 ### What the two cables look like
@@ -44,3 +44,4 @@ Read the numbers molded into the vehicle socket. Plug-face and wire-side drawing
 - Start with ECU identification and reading. Do not bypass an ECU restriction because a plug fits or a COM port appears.
 
 Use QUICK_START.md for software operation and TEST_REPORTING.md before sharing logs.
+

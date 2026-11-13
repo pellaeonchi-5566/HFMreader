@@ -1,16 +1,12 @@
-# Quick start
+# Lite quick start
 
-1. Use a Windows 10/11 x64 computer. Extract the entire ZIP to a writable local folder, such as Documents/HFMreader. Do not run inside the ZIP or move the EXE away from _internal.
-2. Before visiting the vehicle, run CHECK_PC.cmd and inspect PC_CHECK.txt: "passed": true. Run SIMULATE.cmd, F1 to connect, F9/F10 to change data pages, F2 to disconnect, then Esc to exit. Simulation cannot prove cable or vehicle compatibility.
-Read HARDWARE_CONNECTION.md for the two cables and the exact distinction between OBD-side and vehicle-side pin numbers.
+1. Download the complete **HFMreader_Lite_V1_public.1_WIN64.zip** release asset and extract it to a writable local folder. Keep `_internal` beside the EXE. No Python installation is needed.
+2. Run `CHECK_PC.cmd`. Read `CHECK_PC_RESULT.json`: `passed` must be `true`. This offline check creates a simulation session and tests GUI, background process, reading and export. It does not open a physical COM port.
+3. Run `SIMULATE.cmd`. F1 connects to simulated data, F3 reads simulated fault memory, F6 changes language and F7 exports. The title explicitly says SIMULATION. Close it before vehicle testing.
+4. Install the correct adapter manufacturer's Windows driver, confirm its COM number in Device Manager, and verify wiring using [HARDWARE_CONNECTION.md](HARDWARE_CONNECTION.md). Drivers are not bundled. Close other diagnostic programs that may own the same port.
+5. With the vehicle parked, ignition ON and engine OFF, run `Start_Lite.cmd`. Tab to COM, enter/select the port, then F1 to connect/read identification. F3 reads faults. No ECU selection profile is required.
+6. Record the result, including failures. Compare with an independent diagnostic tool if available; close HFMreader's connection before another tool uses the adapter. F2 disconnects; F1/F3 repeats the attempt.
+7. F4 is optional and state-changing. Use it only when clearing is intended, after saving evidence. Read and explicitly confirm the warning. A failed clear is not automatically retried; reconnect and inspect memory before any further decision.
+8. F7 exports; F2 and Esc also package logs. Before leaving the vehicle, verify `logs/lite` contains a ZIP with `sessions/.../events.jsonl` and `summary.json`. Keep the entire `logs/lite` folder. If export fails, keep the raw folder; do not overwrite it.
 
-3. Install the driver supplied for your compatible USB K-Line interface. Confirm its COM number in Windows Device Manager. Match the interface and vehicle diagnostic connector wiring to the vehicle's documented HFM pinout; a mechanically fitting adapter does not establish electrical compatibility. Do not guess pin assignments.
-4. With the vehicle safely stationary, parking brake applied and transmission in P/N, connect the verified interface. Keep cables away from pedals and moving/hot parts. Use the ignition state required by the operation; do not perform control operations while driving. Stable vehicle supply is required.
-5. Run START.cmd. Tab to the COM selector and use arrow keys to choose the verified port. F1 connects; F4 shows identification. Check ECU identity before interpreting results. F2 disconnects. F3 pauses/resumes live reading.
-6. F9/F10 change live-data pages; left/right change status pages outside text/selection fields. F8 opens settings: Tab/arrow keys, Enter to apply, Esc to cancel. Disconnect before changing polling settings. Ctrl+D opens selected data details. Ctrl+E switches English/Chinese.
-7. F5 reads DTCs. Save pre-clear evidence first. F6 opens the existing clear confirmation; cancellation must remain available. Ctrl+Shift+R prepares learning-value reset, with the existing confirmation and ECU conditions. Ctrl+Shift+I requests post-reset readback. Reset can change adaptation; do not assume it is equivalent to a read-only operation.
-8. F12 controls the existing conditional read experiment, only while disconnected and only within its explicit ECU restriction. Its confirmation does not establish compatibility with other ECUs.
-9. F7 exports logs. Disconnect with F2 and allow completion, then Esc to close. Run PACKAGE_RESULTS.cmd after closing. Read PACKAGE_RESULTS.txt for the result ZIP location or an error.
-10. Before leaving, confirm logs exists, contains this session's files, and the result ZIP opens. Keep the entire logs and control_logs folders even if packaging fails. Follow TEST_REPORTING.md before sharing.
-
-If communication fails, stop the operation and keep its logs. Do not repeatedly press clear/reset or treat a timeout as proof that a command was never received. Reconnect only after checking ignition, supply, cable and COM settings. No new live control experiment is required for initial participation.
+Use Tab, arrow keys, Enter and Escape for dialogs. No road-driving test is requested. Optional parked idling can document current faults, but do not clear while the engine is running. See [中文操作卡](LITE_START_ZH_TW.md).

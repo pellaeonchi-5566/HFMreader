@@ -1,85 +1,66 @@
-# HFMreader — Experimental Windows diagnostic tool
+# HFMreader Lite — Experimental Public Test 1
 
-**繁體中文使用者：請先看[中文操作卡](操作卡_繁體中文.md)。沒有車或線材，也可以執行 `SIMULATE.cmd` 熟悉介面。**
+**繁體中文：請先閱讀 [Lite 中文操作卡](LITE_START_ZH_TW.md)。這次改用較簡單的 ECU 辨識與故障碼工具，邀請車友協助蒐集成功或失敗的紀錄；尚未證實全面跨車相容。**
 
-A free Windows tool for Mercedes-Benz owners exploring their Bosch HFM engine-management system. Read live engine data and fault memory, save diagnostic sessions, and help improve compatibility through voluntary test reports.
+Free Windows software by **Pellaeon Chi** for voluntary Mercedes-Benz HFM compatibility research. Lite focuses on **ECU identification, fault-memory reading and local logs**. It also retains an explicitly confirmed experimental fault-clear operation. It is not a read-only tool and is not a replacement for a qualified diagnostic system.
 
-![HFMreader running with simulated data](images/hfmreader-simulation.png)
-*Actual application screenshot in simulation mode. These are demonstration values, not measurements from a vehicle.*
+## Why a simpler tool?
 
-## 2026-10-27: experimental cross-ECU field trial
+I overestimated how far the results from my own ECU could be generalized. Successful ECU identification, or a plausible-looking value, did not prove that another ECU was being read and decoded correctly. I should have made that distinction clearer.
 
-**1.1.2-field.2 is available for voluntary research, not as a proven cross-ECU fix.** It separates read-only trial consent from control authorization and adds a conditional initialization fallback. BOSCH 45/00 readings/configuration remain unverified and can be wrong; VDO 42/00 initialization remains unresolved. Do not use these readings for diagnosis or repair decisions. See [development log](DEVELOPMENT_LOG.md) and [release notes](RELEASE_NOTES.md).
+The earlier full V1 releases and V2 development work have not established broad HFM compatibility. Other vehicles exposed initialization failures and incorrect or unverified readings. Rather than claim that these problems are solved, I am asking owners to try this narrower Lite workflow and share evidence. The goal remains software that can work correctly across different HFM ECUs.
 
-**繁體中文：新版解除其他 ECU 的唯讀限制並加入備援握手，但跨車讀值尚未適配；45/00 曾顯示錯誤數值，42/00 仍未連線成功。請僅作實驗與紀錄蒐集，詳見更新日誌。**
+## Download one complete Windows ZIP
 
-## Download: one complete ZIP
+**[Download HFMreader Lite V1 Public Test 1](https://github.com/pellaeonchi-5566/HFMreader/releases/download/lite-v1-public.1/HFMreader_Lite_V1_public.1_WIN64.zip)** · [Release and SHA-256](https://github.com/pellaeonchi-5566/HFMreader/releases/tag/lite-v1-public.1)
 
-**[Download experimental field.2 for Windows x64 (complete ZIP)](https://github.com/pellaeonchi-5566/HFMreader/releases/download/v1.1.2-field.2/HFMreader_1.1.2-field.2_WIN64.zip)** · [Release notes and SHA-256](https://github.com/pellaeonchi-5566/HFMreader/releases/tag/v1.1.2-field.2). Do not download the repository's Source code ZIP as the Windows application. Do not download individual cloud-folder files.
+Extract everything to a writable local folder. Keep **HFMreader_Lite.exe and `_internal` together**. No Python installation is required. Do not use GitHub's automatically generated Source code ZIP as the application.
 
-[Previous 1.1.1 public test release](https://github.com/pellaeonchi-5566/HFMreader/releases/tag/v1.1.1-public.1) remains available; it retains the known owner-specific read-only gate.
+Run `CHECK_PC.cmd`, then `SIMULATE.cmd` to learn the interface without a car or cable. Simulation does not validate a driver, wiring or ECU. For a vehicle, use `Start_Lite.cmd`. See [QUICK_START.md](QUICK_START.md).
 
-Extract the entire ZIP to a writable folder. Keep **HFMreader.exe and _internal together**. Python installation is not required. Start with CHECK_PC.cmd, then SIMULATE.cmd before connecting a car. Read [QUICK_START.md](QUICK_START.md).
+The [older full releases](https://github.com/pellaeonchi-5566/HFMreader/releases/tag/v1.1.2-field.2) remain available as historical experiments. Their live-data displays and adaptation-reset functions are not features of Lite.
 
-This is an experimental public test release. Package version: 1.1.2-field.2. Some bundled headings/display metadata still show 1.1.1; the original field ZIP is preserved unchanged. Freeware with privately retained source code, not an open-source release.
+## Hardware
 
-**No car or cable yet?** Run `SIMULATE.cmd` to explore the interface with simulated data before buying hardware or connecting a vehicle. Simulation does not test your adapter, wiring or ECU compatibility.
+- Windows 10/11 x64 and a correctly installed USB KKL 409.1 K-Line interface with a COM port.
+- An OBD female-to-banana breakout cable and verified vehicle-specific pinout.
+- The owner's purchase record lists the working interface as **CH340T-based**. Chipset labels, identical blue cases and driver names do not establish compatibility; this is part of the research. Do not assume ELM327 or Bluetooth adapters are interchangeable.
 
-## What you need
+PC USB → USB KKL interface → passive breakout cable → vehicle diagnostic sockets.
 
-- A Windows 10 or 11 x64 computer with a USB port. Adapter and Windows combinations beyond those tested remain unverified.
-- A compatible USB **KKL 409.1 K-Line interface**. The field-tested setup uses an FTDI chipset and a Windows COM port. A similar blue case or the same seller label does not guarantee the same electronics. ELM327/Bluetooth adapters are not interchangeable with this interface and are not supported by this build.
-- An **OBD female-to-banana breakout cable**, allowing the KKL's power, ground and K-Line to reach the correct vehicle diagnostic sockets. This passive cable is a separate item from the USB KKL interface.
-- Correct driver, confirmed COM number, and vehicle-specific wiring information.
+![KKL interface reference](images/kkl-interface-reference.jpg)
+![Banana breakout cable reference](images/banana-breakout-reference.jpg)
 
-### What the two cables look like
+These product reference photos were supplied by Pellaeon Chi. Identify each lead by its electrical function and connector pin, not color alone. See [HARDWARE_CONNECTION.md](HARDWARE_CONNECTION.md) before connecting; the documented W124 pinout is not a universal Mercedes-Benz pinout.
 
-**1. USB KKL interface — connects your computer to the diagnostic cable.**
+## Lite controls and limits
 
-![USB KKL 409.1 interface reference photo](images/kkl-interface-reference.jpg)
+| Key | Action |
+| --- | --- |
+| F1 | Connect and read ECU identification |
+| F2 | Disconnect and package local logs |
+| F3 | Read fault memory, retaining raw bytes and current/stored status |
+| F4 | Request fault clearing with confirmation, pre-clear archive and readback |
+| F6 | Switch Chinese/English interface |
+| F7 | Export logs |
+| Esc | Close and package logs |
 
-**2. OBD female-to-banana breakout cable — connects the KKL interface to individual vehicle sockets.**
+Unknown or suppressed fault bits remain visible. Incomplete communication is not reported as an empty successful scan. Descriptions come from the previously approved independent catalog and retain scope notes; unverified definitions stay explicitly unknown. Codes 121/122 additionally have no verified definition in this catalog. Numbers and raw responses remain available.
 
-![OBD female-to-banana breakout cable reference photo](images/banana-breakout-reference.jpg)
-
-Connect them in this order: **PC USB → KKL interface → breakout cable → vehicle diagnostic sockets**. These original product photos were supplied by Pellaeon Chi as identification references; a matching blue case does not prove an FTDI chipset. Check the chipset, driver and each lead's function. The pictured CD/software is not required or included.
-
-![Identify the KKL interface and breakout cable](images/hardware-identification.svg)
-
-![KKL and breakout cable connection guide](images/hardware-wiring.svg)
-
-For the documented W124 HFM 16-pole X11/4 setup: **OBD 16 → vehicle 16; OBD 4 or 5 → vehicle 1; OBD 7 → vehicle 8**. These are two different connector numbering systems. Colors alone are insufficient: multi-lead breakout cables often have several yellow plugs. See [HARDWARE_CONNECTION.md](HARDWARE_CONNECTION.md) before connecting.
-
-## What it does
-
-- Displays live data in pages, ECU identification and supported status information.
-- Reads DTC numbers, current/stored status and available definitions; preserves raw diagnostic evidence.
-- Provides existing DTC-clear and learning-value-reset functions with confirmations and ECU restrictions. Save evidence before clearing; resetting adaptation is a state-changing operation.
-- Records and exports local diagnostic logs; includes offline simulation and an installation check.
-- Retains the existing 29 HHT runtime records, with conditional applicability and uncertainty indicators. Their presence does not establish validation on every ECU.
-
-No standalone Control Console or new actuator tests are exposed. Keyboard shortcuts are shown in the application.
-
-## What is known — and what is not
-
-The strongest repeated vehicle evidence is **BOSCH 0135451332 / 41/00**. We do not claim support for every M104, M111 or HFM ECU. Communication interruptions, incomplete or incorrect data, and incompatible hardware remain possible. See [KNOWN_ISSUES.md](KNOWN_ISSUES.md).
-
-The independent DTC catalog contains 115 OEM-supported definitions, 13 equipment-reference definitions with scope notes, two supported core meanings with unverified details (107/117), 31 entries marked **Definition not yet verified.**, and two application labels (0/1). An unknown description does not remove the DTC number or block the existing read/clear workflow.
+Lite has no live-data dashboard, adaptation reset, actuator test or coding UI. Its broader read/clear branches are **controlled-test candidates**, not universally vehicle-qualified procedures. Clear only when you intend to erase fault memory, with ignition on and engine stopped; do not clear simply to submit a report. Failed or ambiguous control operations are not automatically resent. See [KNOWN_ISSUES.md](KNOWN_ISSUES.md).
 
 ## Contribute Your Test Logs
 
-We welcome voluntary real-vehicle test logs from Mercedes-Benz HFM owners worldwide, not only bug reports. **Even when everything works, your results are valuable**: different ECU revisions, interfaces and operating conditions help us understand compatibility and diagnostic communication.
+**Successful, Partially Successful, Failed and Connection Failed results are all useful.** Even a completely successful session helps establish which ECU/interface combinations work. Engineers are welcome to analyze the evidence and suggest improvements.
 
-**Successful, Partially Successful, Failed and Connection Failed** results are all welcome. No extra clear/reset experiment is required. Engineers are also welcome to suggest improvements.
+Use **F7**, or disconnect/close, then inspect the generated `HFMreader_V2_*.zip` under `logs/lite`. That filename is inherited from the shared log collector; it does not mean you ran the full V2 application. Keep the entire folder locally, including failures and pre-clear archives. Simulation evidence is separately stored in `logs/lite_simulation`.
 
-Close HFMreader, run **PACKAGE_RESULTS.cmd**, and review the resulting **HFMreader_RESULTS_*.zip** for personal information. Open [Submit Vehicle Test Results & Logs](https://github.com/pellaeonchi-5566/HFMreader/issues/new?template=vehicle-test.yml), select your result and optionally upload the reviewed ZIP. Complete logs are encouraged whenever you are comfortable sharing them. See [TEST_REPORTING.md](TEST_REPORTING.md).
+Open [Submit Vehicle Test Results & Logs](https://github.com/pellaeonchi-5566/HFMreader/issues/new?template=vehicle-test.yml), enter the vehicle/ECU/interface/software details once, select the outcome and optionally attach your reviewed ZIP. An independent tool's result is helpful if available. See [TEST_REPORTING.md](TEST_REPORTING.md).
 
-Logs are submitted voluntarily and are never uploaded automatically. By submitting data, you allow the HFMreader team to analyze it for ECU compatibility, diagnostic protocols and communication problems. Public Issue attachments can be accessed by other people. You may omit attachments; agree on a private transfer method with the maintainer before sending private files. Further public sharing of your original personal logs by the team will remain within your consent; submission is not blanket permission to republish them elsewhere.
+Logs are never uploaded automatically. Submitting is voluntary and permits the HFMreader team to analyze ECU compatibility, diagnostic protocols and communication problems. Public attachments can be accessed by others. You may omit them or agree on a private transfer method first. Further team redistribution of original personal logs must remain within your consent.
 
-## Free use and acknowledgments
+## Free use
 
-Personal use and ordinary professional diagnostics are free, including repair shops charging normal labor fees. Unauthorized resale or rebranding of HFMreader is not permitted under the HFMreader Free-Use Terms. Read [FREE_USE_TERMS.md](FREE_USE_TERMS.md) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Optional sponsorship details may be added later.
+Freeware with privately retained source code. Personal use and normal workshop diagnostics are free, including ordinary labor charges. Unauthorized software resale/repackaging is prohibited. See [FREE_USE_TERMS.md](FREE_USE_TERMS.md) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
-This independent project is not affiliated with or endorsed by Mercedes-Benz, Bosch, FTDI or the adapter manufacturer.
-
-Author: **Pellaeon Chi**. Copyright (c) 2026 Pellaeon Chi in original HFMreader material; third-party notices remain applicable.
+Independent project; not affiliated with Mercedes-Benz, Bosch, VDO or adapter manufacturers. Copyright (c) 2026 **Pellaeon Chi** in original material; third-party rights remain applicable.

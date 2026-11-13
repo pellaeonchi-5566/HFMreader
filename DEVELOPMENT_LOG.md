@@ -1,3 +1,36 @@
+# HFMreader Lite V1 — Experimental Public Test 1
+
+2026-11-13 · Pellaeon Chi · Package 1.0.0-lite.public.1
+
+## Why this release
+
+I overestimated how far results from my own ECU could be generalized. Other vehicles exposed initialization failures and incorrect or unverified readings. Identification success did not prove acquisition or decoding correctness. The earlier full V1 releases and V2 work have not established broad HFM compatibility.
+
+Lite narrows the workflow to ECU identification, fault-memory reading and logs, with a separately confirmed experimental clear operation. Please share successful, partially successful, failed and connection-failed results so we can build evidence across different HFM ECUs. This is not a universal compatibility fix.
+
+## What changed
+
+- Packaged the November 10 Lite F candidate as a standalone Windows x64 EXE, without readable HFMreader sources, tests, private research documents or the original Hfm.dat.
+- Preserved the existing seven numerical fault mappings, branch selection, raw/current/stored evidence, communication and clear workflow.
+- Reused the approved independent description catalog with applicability notes. Its 31 unknown definitions remain unknown; Lite codes 121/122 also have no verified definition.
+- Projected runtime data omits private evidence metadata and retains fixed-hash integrity checks.
+- Added an offline CHECK_PC and clearly labeled simulation launcher using a spawned simulated transport. No physical COM port is used for simulation.
+- Kept both interface languages, keyboard controls, pre-clear archive, readback and no automatic control retry.
+- F7, disconnect and exit produce local logs. The shared collector retains the inherited HFMreader_V2_*.zip name; report the edition as Lite.
+- Source code remains private. Free use includes normal workshop diagnostics under the existing terms.
+
+## Verification and limits
+
+21 targeted regression tests passed (12 Lite and 9 runtime); 44,064 fault single-bit comparisons and 7,424 HHT numerical comparisons passed. These are offline tests. Final clean-package acceptance and binary provenance are recorded in the included BUILD_MANIFEST.json and RUNTIME_PROVENANCE.json.
+
+Cross-ECU physical initialization, timing and clear qualification remain open. No new vehicle test was performed for this packaging task. No live-data dashboard, adaptation reset or actuator tests are exposed by Lite. Compare with an independent diagnostic tool where possible; no clear operation is required to submit a useful report.
+
+Download the complete HFMreader_Lite_V1_public.1_WIN64.zip and verify SHA256SUMS.txt. Keep the EXE and _internal together. Start with CHECK_PC.cmd and SIMULATE.cmd, then read QUICK_START.md and LITE_START_ZH_TW.md before using Start_Lite.cmd on a vehicle.
+
+---
+
+## Historical release record
+
 # HFMreader 1.1.2-field.2 — experimental cross-ECU field trial
 
 Published 2026-10-27 by Pellaeon Chi. This is the unchanged October 25 field-test ZIP, now offered for voluntary compatibility research. **It is not a completed cross-ECU compatibility fix. Do not use unverified readings to diagnose faults or make repair decisions.**
@@ -27,3 +60,4 @@ SHA-256: `77d33cae0dc1fa44336a06edd9f7881b8205b43f8d860802c2263fd1d0175a6d`
 
 ## 繁體中文
 本版修正「其他 ECU 已辨識卻被唯讀白名單擋住」，並加入有條件的備援握手；**尚未完成其他 ECU 的讀取及解碼適配**。45/00 曾出現不可靠數據，不能據此判定車輛故障；42/00 仍未連線成功。最後 14 次完全沒有接收，未實際觸發新握手。請以蒐集紀錄為目的，停車測試、保存每台車的資料，勿將數值視為已驗證。此 ZIP 保留現場版原樣，部分內附文件仍使用舊版標題。
+
